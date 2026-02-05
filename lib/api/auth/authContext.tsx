@@ -322,7 +322,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({
           ? error.message
           : "Registration failed. Please try again.";
 
-      setError(errorMessage);
+      setError({ message: errorMessage, status: 500 });
       throw error;
     } finally {
       setLoading(false);

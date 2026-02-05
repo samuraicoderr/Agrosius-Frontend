@@ -60,6 +60,18 @@ interface WebSocketConfig {
   debug?: boolean;
 }
 
+interface WebSocketConfigInternal {
+  url: string;
+  protocols: string | string[] | undefined;
+  reconnect: boolean;
+  reconnectInterval: number;
+  maxReconnectAttempts: number;
+  reconnectDecay: number;
+  heartbeatInterval: number;
+  heartbeatTimeout: number;
+  debug: boolean;
+}
+
 interface WebSocketStoreState {
   state: WebSocketState;
   error: WebSocketError | null;
@@ -109,7 +121,7 @@ export const useWebSocketStore = create<WebSocketStoreState>((set) => ({
  */
 export class WebSocketManager {
   private ws: WebSocket | null = null;
-  private config: WebSocketConfig;
+  private config: WebSocketConfigInternal;
   private reconnectTimer: NodeJS.Timeout | null = null;
   private heartbeatTimer: NodeJS.Timeout | null = null;
   private heartbeatTimeoutTimer: NodeJS.Timeout | null = null;

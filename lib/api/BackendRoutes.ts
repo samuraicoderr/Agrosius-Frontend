@@ -13,6 +13,7 @@ export const BackendRoutes = {
   logout: `${baseURL}/auth/logout`,
   register: `${baseURL}/auth/register`,
   refresh: `${baseURL}/auth/refresh`,
+  refreshToken: `${baseURL}/auth/refresh`,
 
   /* ----------------------------- CROPS ----------------------------- */
 
