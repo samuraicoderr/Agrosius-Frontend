@@ -1,3 +1,22 @@
+/**
+ * Utility functions for the application
+ */
+
+type ClassValue = string | number | boolean | undefined | null | ClassValue[];
+
+/**
+ * Combine class names conditionally (like clsx/classnames)
+ */
+export function cn(...classes: ClassValue[]): string {
+  return classes
+    .flat()
+    .filter((x) => typeof x === "string" && x.length > 0)
+    .join(" ");
+}
+
+/**
+ * Interpret server error responses
+ */
 export function interpretServerError(
   error: unknown,
   seen = new WeakSet()
@@ -23,4 +42,32 @@ export function interpretServerError(
   }
 
   return messages;
+}
+
+/**
+ * Format a number with commas as thousands separators
+ */
+export function formatNumber(num: number): string {
+  return num.toLocaleString();
+}
+
+/**
+ * Debounce a function
+ */
+export function debounce<T extends (...args: unknown[]) => unknown>(
+  fn: T,
+  ms: number
+): (...args: Parameters<T>) => void {
+  let timeoutId: ReturnType<typeof setTimeout>;
+  return function (...args: Parameters<T>) {
+    clearTimeout(timeoutId);
+    timeoutId = setTimeout(() => fn(...args), ms);
+  };
+}
+
+/**
+ * Sleep for a given number of milliseconds
+ */
+export function sleep(ms: number): Promise<void> {
+  return new Promise((resolve) => setTimeout(resolve, ms));
 }

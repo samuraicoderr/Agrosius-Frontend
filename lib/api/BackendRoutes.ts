@@ -6,6 +6,14 @@ export const BackendRoutes = {
   ping: `${baseURL}/ping`,
   getModelInfo: `${baseURL}/models/info`,
 
+  /* ----------------------------- AUTH (placeholder) ----------------------------- */
+  me: `${baseURL}/auth/me`,
+  login: `${baseURL}/auth/login`,
+  loginFirstFactor: `${baseURL}/auth/login`,
+  logout: `${baseURL}/auth/logout`,
+  register: `${baseURL}/auth/register`,
+  refresh: `${baseURL}/auth/refresh`,
+
   /* ----------------------------- CROPS ----------------------------- */
 
   // Predict single best crop
