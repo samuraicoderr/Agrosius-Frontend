@@ -1,36 +1,104 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# AGROSIUS (Smart Crop Recommendation System)
 
-## Getting Started
+![Agrosius Screenshot](/sen-grp-2.vercel.app_.png)
+![Agrosius Screenshot](/Screenshot 2026-04-26 122417.png)
+![Agrosius Screenshot](/image.png)
 
-First, run the development server:
+Agrosius is a machine learning–based expert system that helps farmers choose the most suitable crop based on soil composition and environmental conditions.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Instead of relying on a rule engine, Agrosius uses trained models to make predictions directly from data. Farmers input key parameters about their land, and the system returns crop recommendations ranked by confidence.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The system is built with a Next.js frontend and a Django Ninja backend.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## What it does
 
-## Learn More
+Agrosius takes structured agricultural data such as soil nutrients and climate conditions, runs it through trained machine learning models, and suggests the best crops to plant.
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Example input
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Farmers provide values like:
 
-## Deploy on Vercel
+* Nitrogen (N), Phosphorus (P), Potassium (K) levels
+* Temperature
+* Humidity
+* Soil pH
+* Rainfall
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Example output
+
+* Recommended crop
+* Model used for prediction
+* Model accuracy
+* Confidence score
+* Ranked list of alternative crops
+
+---
+
+## How it works
+
+1. The user inputs soil and environmental data
+2. The backend processes and normalizes the data
+3. Two models are used for prediction:
+
+   * Random Forest
+   * Neural Network
+4. The system evaluates outputs and ranks possible crops
+5. Results are returned with confidence scores
+
+---
+
+## Tech stack
+
+Frontend
+
+* Next.js
+
+Backend
+
+* Django Ninja
+
+Machine Learning
+
+* Random Forest
+* Neural Network
+
+---
+
+## Why this approach
+
+Agricultural decisions depend heavily on data. Instead of hardcoding rules, Agrosius learns patterns directly from datasets.
+
+* Random Forest provides strong baseline accuracy and interpretability
+* Neural Networks capture more complex relationships in the data
+
+Using both improves reliability and flexibility.
+
+---
+
+## Disclaimer
+
+This system provides recommendations based on trained models and available data.
+
+It should be used as a decision support tool, not a guarantee of yield or outcome.
+
+---
+
+## Future work
+
+* More training data across different regions
+* Better model tuning and ensemble strategies
+* Real-time weather integration
+* Mobile-first experience for farmers
+* Offline support for low-connectivity areas
+
+---
+
+## Authors
+
+Built as part of a final year project.
