@@ -1,8 +1,6 @@
 # AGROSIUS (Smart Crop Recommendation System)
 
 ![Agrosius Screenshot](/sen-grp-2.vercel.app_.png)
-![Agrosius Screenshot](/Screenshot 2026-04-26 122417.png)
-![Agrosius Screenshot](/image.png)
 
 Agrosius is a machine learning–based expert system that helps farmers choose the most suitable crop based on soil composition and environmental conditions.
 
